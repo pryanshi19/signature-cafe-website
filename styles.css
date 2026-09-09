@@ -69,11 +69,13 @@ nav#navMenu a:hover{color:var(--gold);}
 .hero-bg{
   position:absolute;inset:0;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(200,165,97,0.14) 0%, rgba(200,165,97,0) 55%),
-    linear-gradient(180deg,#1f1812 0%, #171310 60%, #100d0a 100%);
+    radial-gradient(ellipse at 50% 0%, rgba(200,165,97,0.18) 0%, rgba(200,165,97,0) 55%),
+    linear-gradient(180deg, rgba(23,19,16,.45) 0%, rgba(23,19,16,.55) 50%, rgba(16,13,10,.9) 100%),
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/DFC_5212_A_cozy_rooftop_table_lit_by_a_warm_lamp_overlooking_Pattayas_night_lights.jpg/1920px-DFC_5212_A_cozy_rooftop_table_lit_by_a_warm_lamp_overlooking_Pattayas_night_lights.jpg') center 35%/cover no-repeat;
+  background-color:#171310;
 }
 .hero-bg::before{
-  content:'';position:absolute;inset:0;opacity:.5;
+  content:'';position:absolute;inset:0;opacity:.35;
   background-image:radial-gradient(rgba(247,241,230,0.06) 1px, transparent 1px);
   background-size:26px 26px;
 }
@@ -117,11 +119,13 @@ nav#navMenu a:hover{color:var(--gold);}
   font-size:.75rem;letter-spacing:.05em;color:var(--gold-soft);
 }
 .about-card{
-  min-height:380px;border-radius:var(--radius);border:1px solid var(--line);
-  background:linear-gradient(160deg, #241d17 0%, #1a140f 100%);
-  padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;min-height:380px;border-radius:var(--radius);border:1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(20,16,12,.2) 0%, rgba(20,16,12,.55) 55%, rgba(16,13,10,.9) 100%),
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Charles_River_%28Pear_Biter%29.jpg/1280px-Charles_River_%28Pear_Biter%29.jpg') center/cover no-repeat;
+  padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;
+  overflow:hidden;
 }
-.bridge-art{width:100%;height:auto;}
 .about-card-stat{margin:1.5rem 0;}
 .about-card-stat strong{font-family:var(--serif);font-size:2.4rem;color:var(--gold-soft);display:block;}
 .about-card-stat span{font-size:.8rem;letter-spacing:.05em;color:var(--cream-dim);text-transform:uppercase;}
@@ -139,14 +143,20 @@ nav#navMenu a:hover{color:var(--gold);}
 /* Gallery */
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
 .gallery-item{
-  aspect-ratio:1/1;border-radius:var(--radius);border:1px solid var(--line);
-  background:linear-gradient(160deg, #241d17 0%, #1a140f 100%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
-  padding:1.5rem;text-align:center;transition:border-color .2s, transform .2s;
+  position:relative;aspect-ratio:1/1;border-radius:var(--radius);border:1px solid var(--line);
+  background:#1a140f;overflow:hidden;transition:border-color .2s, transform .2s;
 }
 .gallery-item:hover{border-color:var(--gold);transform:translateY(-3px);}
-.gallery-item svg{width:44px;height:44px;fill:none;stroke:var(--gold-soft);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.gallery-item p{color:var(--cream-dim);font-size:.85rem;}
+.gallery-item img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+}
+.gallery-item:hover img{transform:scale(1.06);}
+.gallery-item p{
+  position:absolute;left:0;right:0;bottom:0;margin:0;color:var(--cream-dim);font-size:.85rem;
+  text-align:center;padding:2rem 1rem .9rem;
+  background:linear-gradient(180deg, rgba(14,11,9,0) 0%, rgba(14,11,9,.82) 65%, rgba(14,11,9,.95) 100%);
+}
 
 /* Reviews */
 .reviews-sub{color:var(--cream-dim);margin-bottom:2.5rem;}
